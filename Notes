@@ -1,0 +1,165 @@
+Day 1; 
+
+RDBMS (Concept of Tables -- Called Relations)
+--> Data is organized in Tables with Rows(Records) & Columns (attributs).
+
+--------- (Rows)
+||
+||
+||
+|| (Columns)
+
+
+
+Example; MySql, 
+
+PostgreSQL, Oracle etc.
+
+PostgreSQL and Oracle SQL are both relational database management systems (RDBMS) that use SQL (Structured Query Language) as their primary interface for managing and querying data. However, they are developed and maintained by different organizations and have some differences in features, syntax, and implementation.
+
+Here's an overview of each:
+
+PostgreSQL:
+
+PostgreSQL is an open-source RDBMS known for its robustness, reliability, and feature-rich capabilities.
+It offers a wide range of advanced features, including support for complex queries, advanced data types (such as arrays, JSON, XML), full-text search, and geographical data types.
+PostgreSQL is highly extensible, allowing users to define custom data types, functions, and procedural languages (such as PL/pgSQL, PL/Python, PL/Perl).
+It follows the SQL standard closely but also includes its own extensions and features.
+PostgreSQL is often chosen for its scalability, support for ACID transactions, and active community.
+It is released under the PostgreSQL License, which is an open-source license.
+
+
+Oracle SQL:
+
+Oracle SQL is the SQL dialect used in Oracle Database, a commercial RDBMS developed and marketed by Oracle Corporation.
+Oracle Database is widely used in enterprise environments and is known for its scalability, high availability, and advanced features.
+It offers a comprehensive set of features, including support for partitioning, advanced analytics, materialized views, and data compression.
+Oracle SQL includes its own proprietary extensions and features beyond the SQL standard.
+Oracle Database supports multiple programming languages and interfaces, such as PL/SQL (Oracle's procedural language), Java, and RESTful web services.
+Oracle SQL is tightly integrated with other Oracle products and technologies, such as Oracle Application Express (APEX) and Oracle Cloud.
+Oracle Database is a commercial product with various licensing options, ranging from small-scale deployments to enterprise-grade solutions.
+In summary, both PostgreSQL and Oracle SQL are powerful RDBMS systems used for managing and querying relational data. The choice between them often depends on factors such as licensing costs, specific feature requirements, scalability needs, and existing technology stack within an organization.
+
+SQL Crud Operation; 
+
+SQL v/s MySql;
+
+SQL --> CRUD Perform;  ---> Relational DATABASE.
+MySql --> RDBMS uses SQL.
+
+SQL DATATYPES --
+
+VARCHAR is better as it only occupies necessary memory and works efficiently. 
+
+we can also use Unsigned with DATATYPES; when we only have zero or positive to add.
+
+1. DQL (Data Query Lang) --> Select; {Retrive Data From Database}
+
+SELECT first_name, last_name
+FROM employees
+WHERE department = 'Sales';
+
+2. DDL (Data Definition Language) --> Create/Alter/Delete/ to drop database objects like tables, indexes etc. 
+
+... Create, DROP, ALTER, Rename, Truncate.
+
+
+"CREATE:" Used to create new database objects such as tables, views, indexes, etc.
+
+Example:
+
+CREATE TABLE table_name (
+    column1 datatype,
+    column2 datatype,
+    ...
+);
+
+"ALTER:" Used to modify the structure of existing database objects.
+
+Example:
+
+ALTER TABLE table_name
+ADD column_name datatype;
+
+DROP: Used to delete existing database objects.
+
+Example:
+
+DROP TABLE table_name;
+
+TRUNCATE: Used to remove all rows from a table quickly.
+
+Example:
+
+TRUNCATE TABLE table_name;
+
+RENAME: Used to rename an existing database object.
+
+Example:
+
+ALTER TABLE table_name
+RENAME TO new_table_name;
+
+These DDL commands are essential for managing the structure and schema of a database. They allow database administrators and developers to define the database schema, modify it as needed, and remove objects when they are no longer required. It's important to use DDL commands carefully, especially when modifying or deleting existing objects, as they can have significant impacts on the data and applications that rely on them.
+
+What is a database schema?
+
+
+A database schema (or database schema) is a logical blueprint or structural design that represents the organization of data in a database. It defines the structure of the database, including tables, columns, data types, relationships between tables, constraints, indexes, and other database objects.
+
+Here are the key components of a database schema:
+
+Tables: A table is a collection of related data organized in rows and columns. Each table in a database schema represents a specific entity or concept, such as customers, products, orders, etc.
+
+Columns: Columns represent the attributes or fields of the entities represented by tables. Each column has a name and a data type that specifies the type of data that can be stored in that column.
+
+Data Types: Data types define the type of data that can be stored in each column of a table. Common data types include integers, strings, dates, floating-point numbers, and more.
+
+Constraints: Constraints are rules that enforce data integrity and maintain consistency in the database. Common constraints include primary keys, foreign keys, unique constraints, and check constraints.
+
+Indexes: Indexes are data structures that improve the performance of database queries by providing fast access to data. They are "created on columns of tables to speed up search, retrieval, and sorting operations."
+
+Relationships: Relationships define associations between tables based on common columns. The most common "types of relationships are one-to-one, one-to-many, and many-to-many."
+
+"Views: Views are virtual tables that are derived from the data stored in one or more tables. They present a customized view of the data based on specific criteria or joins."
+
+Database schemas are essential for organizing and managing data effectively in a database system. They provide a structured approach to defining and maintaining data integrity, ensuring that data is stored, retrieved, and manipulated accurately and efficiently. 
+
+Additionally, database schemas serve as documentation for database administrators, developers, and users, helping them understand the structure and relationships of the data stored in the database.
+
+3.DML 
+
+Data Manipulation Language - INSERT, Update, Delete;
+
+INSERT: This command is used to add new rows of data into a table.
+
+INSERT INTO table_name (column1, column2, ...)
+VALUES (value1, value2, ...);
+
+Example:
+
+INSERT INTO employees (name, age, salary)
+VALUES ('John Doe', 30, 50000);
+
+UPDATE: This command is used to modify existing data within a table.
+
+UPDATE table_name
+SET column1 = value1, column2 = value2, ...
+WHERE condition;
+
+Example:
+
+UPDATE employees
+SET salary = 55000
+WHERE name = 'John Doe';
+
+DELETE: This command is used to remove rows of data from a table.
+
+DELETE FROM table_name
+WHERE condition;
+Example:
+
+DELETE FROM employees
+WHERE age > 65;
+
+These DML commands are essential for manipulating data stored in tables within a database. They allow you to add, modify, and delete data, providing the capability to maintain and update the contents of your database tables as needed. It's important to use these commands with caution, especially the DELETE command, as it permanently removes data from the database. Always ensure that you have a backup of your data before performing operations that modify or delete large amounts of data.
